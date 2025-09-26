@@ -18,7 +18,7 @@ const Customers = ({ customerPromise, onSelect, onResolved }) => {
   // Remove from Task Status (Resolved)
   const handleRemove = (id) => {
     setSelectedCustomers(selectedCustomers.filter(c => c.id !== id));
-    toast.success('Resolved!');
+    // toast.success('Resolved!');
     onResolved();  
   };
 
@@ -52,7 +52,7 @@ const Customers = ({ customerPromise, onSelect, onResolved }) => {
             {selectedCustomers.map((customer) => (
               <li 
                 key={customer.id} 
-                className="border-b pb-2 last:border-none flex justify-between items-start"
+                className="pb-2 last:border-none flex justify-between items-start"
               > 
                 <div className='bg-white shadow-md rounded-2xl p-6 hover:shadow-lg cursor-pointer w-full'> 
                   <h4 className="font-bold">{customer.title}</h4> 

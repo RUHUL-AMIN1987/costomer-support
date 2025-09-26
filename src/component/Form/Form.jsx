@@ -1,6 +1,5 @@
 import React from 'react';
 import vector1 from '../../assets/vector1.png';
-// import Customer from '../Customer/Customer';
 
 const Form = ({ inProgressCount, resolvedCount }) => {
     return (
