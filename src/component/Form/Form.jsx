@@ -1,8 +1,8 @@
 import React from 'react';
 import vector1 from '../../assets/vector1.png';
-import Customer from '../Customer/Customer';
+// import Customer from '../Customer/Customer';
 
-const Form = ({ inProgressCount }) => {
+const Form = ({ inProgressCount, resolvedCount }) => {
     return (
         <div className=' container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 grid gap-10 grid-cols-1 md:grid-cols-2'>
           <div
@@ -21,7 +21,7 @@ const Form = ({ inProgressCount }) => {
                 backgroundRepeat: `no-repeat`,
               }}>
               <h3 className="text-[24px]">Resolved</h3>
-              <span className="font-semibold text-[60px]">0</span>
+              <span className="font-semibold text-[60px]">{resolvedCount}</span>
           </div>
         </div>
     );
