@@ -1,23 +1,26 @@
 import React from 'react';
 import vector1 from '../../assets/vector1.png';
+import Customer from '../Customer/Customer';
 
-const Form = () => {
+const Form = ({ inProgressCount }) => {
     return (
-        <div className='container mx-auto grid grid-cols-2 gap-10 pt-20 pb-20'>
+        <div className=' container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 grid gap-10 grid-cols-1 md:grid-cols-2'>
           <div
             className="rounded-md p-10 text-white h-[250px] relative flex flex-col justify-center items-center"
             style={{
               backgroundImage: `url(${vector1}), linear-gradient(135deg, #632EE3, #9F62F2)`,
+              backgroundRepeat: `no-repeat`,
             }}>
             <h3 className="text-[24px]">In-Progress</h3>
-            <span className="font-semibold text-[60px]">0</span>
+            <span className="font-semibold text-[60px]">{inProgressCount}</span>
           </div>
           <div
               className="rounded-md p-10 text-white h-[250px] relative flex flex-col justify-center items-center"
               style={{
                 backgroundImage: `url(${vector1}), linear-gradient(135deg, #54CF68, #00827A)`,
+                backgroundRepeat: `no-repeat`,
               }}>
-              <h3 className="text-[24px]">In-Progress</h3>
+              <h3 className="text-[24px]">Resolved</h3>
               <span className="font-semibold text-[60px]">0</span>
           </div>
         </div>
