@@ -8,7 +8,7 @@ const Customers = ({ customerPromise, onSelect, onResolved }) => {
   
   // Card click
   const handleSelect = (customer) => {
-    if (!selectedCustomers.find(c => c.id === customer.id)) {
+    if (!selectedCustomers.find(customer => customer.id === customer.id)) {
       setSelectedCustomers([...selectedCustomers, customer]);
       toast.success('In Progress!'); 
       onSelect();  
@@ -17,8 +17,7 @@ const Customers = ({ customerPromise, onSelect, onResolved }) => {
 
   // Remove from Task Status (Resolved)
   const handleRemove = (id) => {
-    setSelectedCustomers(selectedCustomers.filter(c => c.id !== id));
-    // toast.success('Resolved!');
+    setSelectedCustomers(selectedCustomers.filter(customer => customer.id !== id));
     onResolved();  
   };
 
@@ -52,14 +51,12 @@ const Customers = ({ customerPromise, onSelect, onResolved }) => {
             {selectedCustomers.map((customer) => (
               <li 
                 key={customer.id} 
-                className="pb-2 last:border-none flex justify-between items-start"
-              > 
+                className="pb-2 last:border-none flex justify-between items-start"> 
                 <div className='bg-white shadow-md rounded-2xl p-6 hover:shadow-lg cursor-pointer w-full'> 
                   <h4 className="font-bold">{customer.title}</h4> 
                   <button  
                     onClick={() => handleRemove(customer.id)}  
-                    className="w-full mt-3 cursor-pointer text-white ml-2 bg-emerald-600 px-3 py-1 rounded" 
-                  >
+                    className="w-full mt-3 cursor-pointer text-white ml-2 bg-emerald-600 px-3 py-1 rounded">
                     Completed
                   </button>
                 </div> 
